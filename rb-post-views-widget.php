@@ -1,13 +1,5 @@
 <?php
 /**
- * RB Post Views Widget
- * @package 		  WordPress
- * @subpackage 		  RB Free Plugin
- * @author            Bashir Rased
- * @copyright         2022 Bashir Rased
- * @license           GPL-2.0-or-later
- *
- * @wordpress-plugin
  * Plugin Name:       RB Post Views Widget
  * Plugin URI:        https://github.com/BashirRased/wp-plugin-rb-post-views-widget
  * Description:       RB Post Views Widget plugin use for your posts visit count.
