@@ -21,7 +21,7 @@
  * Domain Path: 	  /languages
  * License:           GPL v2 or later
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Update URI:        https://github.com/BashirRased/wp-plugin-rb-post-views-widget
+ * 
  */
 
 // Exit if accessed directly.
@@ -30,10 +30,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Plugin Text domain loaded
-function rb_plugin_textdomain() {
+function rbpvw_textdomain() {
     load_plugin_textdomain('rb-post-views-widget', false, dirname(plugin_basename(__FILE__)).'/languages'); 
 }
-add_action('plugins_loaded', 'rb_plugin_textdomain');
+add_action('plugins_loaded', 'rbpvw_textdomain');
 
 // Redirect Page Link Activated
 add_action('activated_plugin', function ($plugin) {
@@ -60,19 +60,19 @@ add_filter('plugin_row_meta', function ($links, $plugin) {
 }, 10, 2);
 
 // RB Post Views Meta Key
-function rb_post_views_count() {	
+function rbpvw_count() {	
 	if(is_singular()){
-		$rb_post_view_meta = 'rb_post_views_count';
-		$rb_post_count = get_post_meta(get_the_ID(), $rb_post_view_meta, true);
-		$rb_post_count++;
-		update_post_meta(get_the_ID(), $rb_post_view_meta, $rb_post_count);
+		$rbpvw_view_meta = 'rbpvw_count';
+		$rbpvw_count = get_post_meta(get_the_ID(), $rbpvw_view_meta, true);
+		$rbpvw_count++;
+		update_post_meta(get_the_ID(), $rbpvw_view_meta, $rbpvw_count);
 	}
 }
-add_action('wp_head', 'rb_post_views_count');
+add_action('wp_head', 'rbpvw_count');
 
 
 /**
- * Widget API: RB_Post_Views_Widget class
+ * Widget API: RBPVW_Widget class
  *
  * @package WordPress
  * @subpackage RB Free Plugin
@@ -86,7 +86,7 @@ add_action('wp_head', 'rb_post_views_count');
  *
  * @see WP_Widget
  */
-class RB_Post_Views_Widget extends WP_Widget {
+class RBPVW_Widget extends WP_Widget {
 
 	/**
 	 * Sets up a new RB Post Views Widget.
@@ -96,12 +96,12 @@ class RB_Post_Views_Widget extends WP_Widget {
 	public function __construct() {
 		$widget_options = array(
 		'name' => __('RB Post Views Widget','rb-post-views-widget'),
-		'classname' => 'widget_rb_post_views',
+		'classname' => 'widget_rbpvw',
 		'description' => __('RB Post Views Widget plugin is counting every post visiting times.','rb-post-views-widget'),
 		'customize_selective_refresh' => true,
 		'show_instance_in_rest'       => true,
 		);
-		parent::__construct( 'RB_Post_Views_Widget', __('RB Post Views Widget','rb-post-views-widget'), $widget_options);
+		parent::__construct( 'RBPVW_Widget', __('RB Post Views Widget','rb-post-views-widget'), $widget_options);
 	}
 
 	/**
@@ -120,7 +120,7 @@ class RB_Post_Views_Widget extends WP_Widget {
 		$posts_args = array(
 		'post_type' => $post_type,
 		'posts_per_page' => $display_total_posts,
-		'meta_key' => 'rb_post_views_count',
+		'meta_key' => 'rbpvw_count',
 		'orderby' => 'meta_value_num',
 		'order' => 'DESC'
 		);
@@ -128,11 +128,12 @@ class RB_Post_Views_Widget extends WP_Widget {
 		$posts_query = new WP_Query($posts_args);
 		
 		echo $args['before_widget'];
-		if(!empty($instance['title'])):
-		
-		echo $args['before_title'].apply_filters('widget_title', $instance['title']).$args['after_title'];
-		endif;
-		
+
+		$title = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
+
+		if ( $title ) {
+			echo $args['before_title'] . esc_html($title) . $args['after_title'];
+		}		
 
 		if($posts_query->have_posts()): ?>
 		<ul>
@@ -140,8 +141,8 @@ class RB_Post_Views_Widget extends WP_Widget {
 			<?php
 			while($posts_query->have_posts()): $posts_query->the_post();	
 			
-			$rb_post_view_meta = 'rb_post_views_count';
-			$rb_post_count = get_post_meta(get_the_ID(), $rb_post_view_meta, true);
+			$rbpvw_view_meta = 'rbpvw_count';
+			$rbpvw_count = get_post_meta(get_the_ID(), $rbpvw_view_meta, true);
 			?>
 
 			<li>
@@ -150,12 +151,12 @@ class RB_Post_Views_Widget extends WP_Widget {
 				<?php esc_html_e(get_the_title(),'rb-post-views-widget'); ?>
 				</a>
 
-				<span class="rb-post-view-num">
+				<span class="rbpvw-num">
 					<?php
 					printf(
 						/* translators: %s: RB Post Count. */
 						esc_html('(%s)','rb-post-views-widget'),
-						$rb_post_count
+						$rbpvw_count
 					);
 					?>
 				</span>
@@ -176,7 +177,7 @@ class RB_Post_Views_Widget extends WP_Widget {
 	 * @since 1.0.0
 	 *
 	 * @param array $new_instance New settings for this instance as input by the user via
-	 * RB_Post_Views_Widget::form().
+	 * RBPVW_Widget::form().
 	 * @param array $old_instance Old settings for this instance.
 	 * @return array Updated settings to save.
 	 */
@@ -185,7 +186,7 @@ class RB_Post_Views_Widget extends WP_Widget {
 
 		$instance['title'] = (!empty($new_instance['title']) ? sanitize_text_field($new_instance['title']):'');
 		$instance['post_type'] = (!empty($new_instance['post_type']) ? strip_tags($new_instance['post_type']):'');
-		$instance['total'] = (!empty($new_instance['total']) ? (int)$new_instance['total']:0);
+		$instance['total'] = (!empty($new_instance['total']) ? (int)$new_instance['total']:absint(0));
 
 		return $instance;		
 	}
@@ -200,8 +201,8 @@ class RB_Post_Views_Widget extends WP_Widget {
 	public function form( $instance ) {
 
 		$title = isset($instance['title'])? $instance['title']:esc_html('Most Views Post','rb-post-views-widget');
-		$post_type = isset($instance['post_type'])? strip_tags($instance['post_type']):'post';
-		$display_total_posts = isset($instance['total'])? $instance['total']:5;
+		$post_type = isset($instance['post_type'])? strip_tags($instance['post_type']):['post'];
+		$display_total_posts = isset($instance['total'])? $instance['total']:absint(5);
 
 		// Get post types
 		$post_type_list = array(
@@ -254,7 +255,7 @@ class RB_Post_Views_Widget extends WP_Widget {
 			?>
 
 				<!-- Widget Form Post Type Field Option -->
-				<option value="<?php echo esc_attr($post_type_id); ?>" <?php echo $post_type_select; ?>>
+				<option value="<?php echo esc_attr($post_type_id); ?>" <?php echo wp_kses_post($post_type_select); ?>>
 					<?php esc_html_e($post_type_name,'rb-post-views-widget'); ?>
 				</option>
 
@@ -282,7 +283,7 @@ class RB_Post_Views_Widget extends WP_Widget {
 }
 
 // RB Post Views Widget Register
-function rb_post_views_widget() {
-	register_widget('RB_Post_Views_Widget');
+function RBPVW_Widget() {
+	register_widget('RBPVW_Widget');
 }
-add_action('widgets_init', 'rb_post_views_widget');
+add_action('widgets_init', 'RBPVW_Widget');
