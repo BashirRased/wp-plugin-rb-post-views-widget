@@ -40,7 +40,4 @@ Actiated your widget and save.
 == Changelog ==
 
 = 1.0.0 =
-* 16.04.2022 - 2nd submission
-
-= 1.0.0 =
-* 29.03.2022 - 1st submission
+* 21.04.2022 - 1st submission
