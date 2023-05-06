@@ -1,9 +1,9 @@
 === RB Post Views Widget ===
 Contributors: bashirrased
 Tags: rb, rb-post-views-Widget
-Requires at least: 5.9
-Tested up to: 5.9
-Requires PHP: 5.6
+Requires at least: 5.0
+Tested up to: 6.2
+Requires PHP: 7.1
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
