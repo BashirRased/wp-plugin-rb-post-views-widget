@@ -4,9 +4,9 @@
  * Plugin URI:        https://github.com/BashirRased/wp-plugin-rb-post-views-widget
  * Description:       RB Post Views Widget plugin use for your posts visit count.
  * Version:           1.0.0
- * Requires at least: 5.0
- * Tested up to: 6.2
- * Requires PHP: 7.1
+ * Requires at least: 6.4
+ * Tested up to: 6.5
+ * Requires PHP: 7.0
  * Author:            Bashir Rased
  * Author URI:        https://profiles.wordpress.org/bashirrased2017/
  * Text Domain:       rb-post-views-widget
@@ -114,7 +114,8 @@ class RBPVW_Widget extends WP_Widget {
 		'posts_per_page' => $display_total_posts,
 		'meta_key' => 'rbpvw_count',
 		'orderby' => 'meta_value_num',
-		'order' => 'DESC'
+		'order' => 'DESC',
+		'ignore_sticky_posts' => true
 		);
 		
 		$posts_query = new WP_Query($posts_args);
@@ -140,15 +141,15 @@ class RBPVW_Widget extends WP_Widget {
 			<li>
 
 				<a href="<?php echo esc_url(get_permalink()); ?>" class="rb-post-view-link">
-				<?php esc_html_e(get_the_title(),'rb-post-views-widget'); ?>
+				<?php the_title(); ?>
 				</a>
 
 				<span class="rbpvw-num">
 					<?php
 					printf(
 						/* translators: %s: RB Post Count. */
-						esc_html('(%s)','rb-post-views-widget'),
-						$rbpvw_count
+						'%s',
+						esc_html('('.$rbpvw_count.')', 'rb-post-views-widget')
 					);
 					?>
 				</span>
@@ -177,7 +178,7 @@ class RBPVW_Widget extends WP_Widget {
 		$instance = array();
 
 		$instance['title'] = (!empty($new_instance['title']) ? sanitize_text_field($new_instance['title']):'');
-		$instance['post_type'] = (!empty($new_instance['post_type']) ? strip_tags($new_instance['post_type']):'');
+		$instance['post_type'] = (!empty($new_instance['post_type']) ? $new_instance['post_type']:'');
 		$instance['total'] = (!empty($new_instance['total']) ? (int)$new_instance['total']:absint(0));
 
 		return $instance;		
@@ -193,7 +194,7 @@ class RBPVW_Widget extends WP_Widget {
 	public function form( $instance ) {
 
 		$title = isset($instance['title'])? $instance['title']:esc_html('Most Views Post','rb-post-views-widget');
-		$post_type = isset($instance['post_type'])? strip_tags($instance['post_type']):['post'];
+		$post_type = isset($instance['post_type'])? $instance['post_type']:['post'];
 		$display_total_posts = isset($instance['total'])? $instance['total']:absint(5);
 
 		// Get post types
@@ -248,7 +249,7 @@ class RBPVW_Widget extends WP_Widget {
 
 				<!-- Widget Form Post Type Field Option -->
 				<option value="<?php echo esc_attr($post_type_id); ?>" <?php echo wp_kses_post($post_type_select); ?>>
-					<?php esc_html_e($post_type_name,'rb-post-views-widget'); ?>
+					<?php echo esc_html($post_type_name,'rb-post-views-widget'); ?>
 				</option>
 
 			<?php endforeach; ?>
