@@ -1,0 +1,57 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: RB Post Views Columns\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-14 16:16+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.0; wp-6.8.3; php-8.2.27\n"
+"X-Domain: rb-post-views-columns"
+
+#: rb-post-views-columns.php:131
+msgid "All Posts"
+msgstr "সব পোস্ট"
+
+#. Author of the plugin
+msgid "Bashir Rased"
+msgstr "বশির রাশেদ"
+
+#. Description of the plugin
+msgid "Display post view counts in WordPress admin columns."
+msgstr "ওয়ার্ডপ্রেসের অ্যাডমিন ড্যাশবোর্ডের সব পোস্ট লিস্ট টেবিলে পোস্ট ভিউ কলাম দেখানো হয়েছে।"
+
+#: rb-post-views-columns.php:53
+msgid "Fork on GitHub"
+msgstr "গিটহাব থেকে ডাউনলোড করুন"
+
+#. Author URI of the plugin
+msgid "https://bashir-rased.com/"
+msgstr "https://bashir-rased.com/"
+
+#. URI of the plugin
+msgid "https://github.com/BashirRased/wp-plugin-rb-post-views-columns"
+msgstr "https://github.com/BashirRased/wp-plugin-rb-post-views-columns"
+
+#: rb-post-views-columns.php:133
+msgid "No View Posts"
+msgstr "কোন পোস্ট দেখা হয়নি"
+
+#: rb-post-views-columns.php:83
+msgid "Post Views Count"
+msgstr "পোস্ট দেখার সংখ্যা"
+
+#. Name of the plugin
+msgid "RB Post Views Columns"
+msgstr "আর বি পোস্ট দেখার কলাম"
+
+#: rb-post-views-columns.php:132
+msgid "View Posts"
+msgstr "দেখা পোস্টগুলো"
