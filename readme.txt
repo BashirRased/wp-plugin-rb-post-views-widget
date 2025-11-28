@@ -1,7 +1,7 @@
-=== RB Post Views Columns ===
+=== RB Post Views Widget ===
 Contributors: bashirrased2017
 Donate link: https://bashir-rased.com/
-Tags: post views, views column, admin column, view counter, post visits
+Tags: post views, view counter, popular posts, widget, post views widget
 Requires at least: 6.4
 Tested up to: 6.7
 Requires PHP: 7.4
@@ -9,58 +9,53 @@ Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-
-A lightweight and smart plugin that adds a Post Views column to your WordPress admin to help you track how many times each post has been viewed.
+Display the most viewed posts on your website using a simple, lightweight widget.
 
 == Description ==
 
-**RB Post Views Column** is a simple, fast, and user-friendly plugin that displays the total view count for each post directly inside your WordPress Posts list table.
+**RB Post Views Widget** is a lightweight and easy-to-use plugin that displays your website’s most viewed posts.  
+The plugin counts post views and allows you to show a customizable list of popular posts from any post type.
 
-No setup required — once activated, a new **Post Views Count** column automatically appears for all public post types. This allows you to quickly identify your most visited content without needing additional analytics tools.
-
-Perfect for bloggers, marketers, and website owners who want a quick overview of their top-performing posts inside the WordPress dashboard.
-
-### Key Features
-- Shows a **Post Views Count** column in the admin post list.
-- Supports all **public post types** (posts, pages, custom post types).
-- No configuration needed — activate and go.
-- Lightweight and optimized for performance.
-- No third-party dependencies.
+### Features:
+- Count views for all post types  
+- Display most viewed posts in a widget  
+- Simple setup – no configuration needed  
+- Works with any theme  
+- Lightweight and fast
 
 == Installation ==
 
-### Install From Your WordPress Dashboard
+### From your WordPress dashboard:
 
-1. **Go to:**  
-   Plugins → Add New
-
-2. **Search for:**  
-   *RB Post Views Column*
-
-3. **Install and Activate** the plugin.
-
-4. The Post Views column will automatically appear in your admin Posts list.
-
-### Manual Installation
-
-1. Upload the plugin folder to `/wp-content/plugins/`.
-2. Activate the plugin from **Plugins → Installed Plugins**.
+1. Go to **Plugins → Add New**
+2. Search for **"RB Post Views Widget"**
+3. Click **Install Now** and then **Activate**
+4. Go to **Appearance → Widgets**
+5. Locate **RB Post Views Widget** in the widget list
+6. Add it to your sidebar or any widget area and **Save**
 
 == Frequently Asked Questions ==
 
-= 1. Do I need any other plugins for this to work? =  
-No. RB Post Views Column works on its own with no additional requirements.
+= 1. Do I need any additional plugins? =
+No. RB Post Views Widget works independently.
+
+= 2. Does it work with custom post types? =
+Yes. It works with all registered post types.
 
 == Screenshots ==
 
-1. The RB Post Views Column displayed in the WordPress Posts admin screen.
+1. Admin dashboard widget output  
+2. Frontend display of the most viewed posts  
 
 == Changelog ==
 
-= 1.0.0 =  
-* 21.04.2022 – Initial release.
+= 1.0.1 =
+* 24.11.2025 – Updated plugin headers, tested up to WP 6.7, performance improvements
+
+= 1.0.0 =
+* 21.04.2022 – Initial release
 
 == Upgrade Notice ==
 
-= 1.0.1 =  
-* 22.11.2025 – Updated code with phpcs wpcs.
+= 1.0.1 =
+Recommended update for compatibility with WordPress 6.7, improved performance and optimizations.

@@ -1,0 +1,65 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: RB Post Views Widget\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-28 14:40+0000\n"
+"PO-Revision-Date: 2025-11-28 22:52+0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: bn_BD\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.8\n"
+"X-Loco-Version: 2.8.0; wp-6.8.3; php-8.2.27\n"
+"X-Domain: rb-post-views-widget\n"
+
+#. Author of the plugin
+msgid "Bashir Rased"
+msgstr "বশির রাশেদ"
+
+#. Description of the plugin
+msgid "Count and display the most viewed posts in a widget."
+msgstr "সর্বাধিক দেখা পোস্টগুলো গণনা করুন ও প্রর্দশিত করুন।"
+
+#: class-rbpvw-widget.php:25
+msgid "Display most viewed posts."
+msgstr "সর্বাধিক দেখা পোস্টগুলো প্রর্দশিত করা।"
+
+#: rb-post-views-widget.php:80
+msgid "Fork on GitHub"
+msgstr "গিটহাব থেকে ডাউনলোড করুন"
+
+#. Author URI of the plugin
+msgid "https://bashir-rased.com/"
+msgstr "https://bashir-rased.com/"
+
+#. URI of the plugin
+msgid "https://github.com/BashirRased/wp-plugin-rb-post-views-widget"
+msgstr "https://github.com/BashirRased/wp-plugin-rb-post-views-widget"
+
+#: class-rbpvw-widget.php:127
+msgid "Most Viewed Posts"
+msgstr "সর্বাধিক দেখা পোস্টগুলো"
+
+#: class-rbpvw-widget.php:164
+msgid "Number of Posts:"
+msgstr "মোট পোস্টের সংখ্যা:"
+
+#: class-rbpvw-widget.php:148
+msgid "Post Type:"
+msgstr "পোস্ট টাইপ:"
+
+#. Name of the plugin
+#: class-rbpvw-widget.php:32
+msgid "RB Post Views Widget"
+msgstr "আরবি পোস্ট ভিউজ উইজেট"
+
+#: rb-post-views-widget.php:59
+msgid "Settings"
+msgstr "সেটিং"
+
+#: class-rbpvw-widget.php:137
+msgid "Title:"
+msgstr "শিরোনাম"
