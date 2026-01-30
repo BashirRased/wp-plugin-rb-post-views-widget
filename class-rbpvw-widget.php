@@ -58,6 +58,7 @@ class RBPVW_Widget extends WP_Widget {
 			array(
 				'post_type'           => $post_type,
 				'posts_per_page'      => $total,
+				// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query
 				'meta_query'          => array(
 					array(
 						'key'     => 'rbpvw_count',
