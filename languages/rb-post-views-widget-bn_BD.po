@@ -32,8 +32,8 @@ msgid "Fork on GitHub"
 msgstr "গিটহাব থেকে ডাউনলোড করুন"
 
 #. Author URI of the plugin
-msgid "https://bashir-rased.com/"
-msgstr "https://bashir-rased.com/"
+msgid "https://bashir-rased.dev/"
+msgstr "https://bashir-rased.dev/"
 
 #. URI of the plugin
 msgid "https://github.com/BashirRased/wp-plugin-rb-post-views-widget"

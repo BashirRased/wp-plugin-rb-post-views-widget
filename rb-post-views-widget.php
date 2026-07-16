@@ -1,15 +1,15 @@
 <?php
 /**
  * Plugin Name:       RB Post Views Widget
- * Plugin URI:        https://github.com/BashirRased/wp-plugin-rb-post-views-widget
+ * Plugin URI:        https://bashir-rased.dev/wp-plugins/rb-post-views-widget
  * Description:       Count and display the most viewed posts in a widget.
- * Version:           1.0.1
- * Requires at least: 6.4
- * Tested up to:      6.7
- * Requires PHP:      7.4
+ * Version:           1.0.2
+ * Requires at least: 7.0
+ * Tested up to:      7.0
+ * Requires PHP:	  8.1
  * PHP Version:       8.2
  * Author:            Bashir Rased
- * Author URI:        https://bashir-rased.com/
+ * Author URI:        https://bashir-rased.dev/
  * Text Domain:       rb-post-views-widget
  * Domain Path:       /languages
  *

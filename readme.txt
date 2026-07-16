@@ -1,11 +1,11 @@
 === RB Post Views Widget ===
 Contributors: bashirrased2017
-Donate link: https://bashir-rased.com/
+Donate link: https://bashir-rased.dev/
 Tags: post views, view counter, popular posts, widget, post views widget
-Requires at least: 6.4
-Tested up to: 6.7
-Requires PHP: 7.4
-Stable tag: 1.0.1
+Requires at least: 7.0
+Tested up to: 7.0
+Requires PHP: 8.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -49,13 +49,11 @@ Yes. It works with all registered post types.
 
 == Changelog ==
 
+= 1.0.2 =
+* 17.07.2026 – Updated with WordPress version support.
+
 = 1.0.1 =
 * 24.11.2025 – Updated plugin headers, tested up to WP 6.7, performance improvements
 
 = 1.0.0 =
 * 21.04.2022 – Initial release
-
-== Upgrade Notice ==
-
-= 1.0.1 =
-Recommended update for compatibility with WordPress 6.7, improved performance and optimizations.
